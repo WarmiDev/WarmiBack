@@ -12,4 +12,8 @@ class Marca extends Model
         'marca_nombre',
         'marca_origen'
     ];
+
+    public function productos(){
+        return $this->hasOne(Producto::class);
+    }
 }

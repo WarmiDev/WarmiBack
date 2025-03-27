@@ -8,7 +8,7 @@ class Producto extends Model
 {
     protected $table = 'productos';
     protected $fillable = [
-        'producto_id',
+        'id',
         'producto_nombre',
         'producto_descripcion',
         'producto_precio',
@@ -16,4 +16,11 @@ class Producto extends Model
         'marca_id',
         'tipo_producto_id',
     ];
+
+    public function marca(){
+        return $this->belongsTo(Marca::class, 'marca_id');
+    }
+    public function tipoProducto(){
+        return $this->belongsTo(TipoProducto::class, 'tipo_producto_id');
+    }
 }

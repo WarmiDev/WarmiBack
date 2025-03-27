@@ -12,4 +12,7 @@ class TipoProducto extends Model
         'tipo_producto_nombre',
         'tipo_producto_descripcion',
     ];
+    public function productos(){
+        return $this->hasOne(Producto::class);
+    }
 }
