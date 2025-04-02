@@ -3,7 +3,8 @@
 use App\Http\Controllers\MarcaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+// ruta fallback captura cualquier URL que no coincida con otras rutas definidas
+Route::fallback(function () {
     return view('welcome');
 });
 
